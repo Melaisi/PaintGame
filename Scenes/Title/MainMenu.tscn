@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Art/Temp/uselessArt.png" type="Texture" id=1]
+[ext_resource path="res://Art/Temp/NewGame.png" type="Texture" id=2]
+[ext_resource path="res://Art/Temp/Title.png" type="Texture" id=3]
+[ext_resource path="res://Art/Temp/Continue.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Title/NewGame.gd" type="Script" id=5]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 904.0
+margin_bottom = 733.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 246.0
+margin_bottom = 653.0
+
+[node name="Title" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+margin_right = 246.0
+margin_bottom = 148.0
+texture = ExtResource( 3 )
+
+[node name="MenuOptions" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_top = 152.0
+margin_right = 246.0
+margin_bottom = 601.0
+size_flags_vertical = 3
+custom_constants/separation = 30
+alignment = 1
+
+[node name="NewGame" type="TextureRect" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+margin_top = 136.0
+margin_right = 246.0
+margin_bottom = 209.0
+texture = ExtResource( 2 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Continue" type="TextureRect" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+margin_top = 239.0
+margin_right = 246.0
+margin_bottom = 312.0
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_top = 605.0
+margin_right = 246.0
+margin_bottom = 653.0
+text = "Version 0.0.1
+By:
+Studio Name"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
+margin_left = 250.0
+margin_right = 784.0
+margin_bottom = 653.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Art" type="TextureRect" parent="HBoxContainer/CenterContainer"]
+margin_left = 55.0
+margin_right = 478.0
+margin_bottom = 653.0
+texture = ExtResource( 1 )
+
+[connection signal="gui_input" from="HBoxContainer/VBoxContainer/MenuOptions/NewGame" to="HBoxContainer/VBoxContainer/MenuOptions/NewGame" method="_on_NewGame_gui_input"]
