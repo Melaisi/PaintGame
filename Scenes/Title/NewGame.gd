@@ -18,4 +18,4 @@ func _ready():
 
 func _on_NewGame_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		print("Open New Game")
+		get_tree().change_scene("res://Scenes/Main/MainLevel.tscn")
