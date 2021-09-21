@@ -41,9 +41,9 @@ custom_constants/separation = 30
 alignment = 1
 
 [node name="NewGame" type="TextureRect" parent="HBoxContainer/VBoxContainer/MenuOptions"]
-margin_top = 136.0
+margin_top = 188.0
 margin_right = 246.0
-margin_bottom = 209.0
+margin_bottom = 261.0
 texture = ExtResource( 2 )
 script = ExtResource( 5 )
 __meta__ = {
@@ -51,6 +51,7 @@ __meta__ = {
 }
 
 [node name="Continue" type="TextureRect" parent="HBoxContainer/VBoxContainer/MenuOptions"]
+visible = false
 margin_top = 239.0
 margin_right = 246.0
 margin_bottom = 312.0
