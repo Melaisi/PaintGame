@@ -32,6 +32,11 @@ func move_tween(dir):
 	tween.start()
 
 func move(dir):
+	if dir.x < 0 :
+		$AnimatedSprite.flip_h = true
+	else:
+		$AnimatedSprite.flip_h = false
+		
 	ray.cast_to = dir * tile_size
 	ray.force_raycast_update()
 	if !ray.is_colliding():
