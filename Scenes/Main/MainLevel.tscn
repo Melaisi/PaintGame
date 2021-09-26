@@ -6,7 +6,7 @@
 
 [node name="MainScene" type="Node"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap_Ground" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 100, 100 )
 cell_custom_transform = Transform2D( 100, 0, 0, 100, 0, 0 )
@@ -17,4 +17,4 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 
 position = Vector2( 187.825, 195.191 )
 
 [node name="Enemy_NotHappy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 855.632, 347.058 )
+position = Vector2( 854.218, 349.887 )
