@@ -8,22 +8,41 @@ var inputs = {
 	"ui_down":Vector2.DOWN}
 
 onready var ray = $RayCast2D 
-
 onready var tween = $Tween 
-export var speed = 3 
+export var speed = 3.15 
+var last_dir
+var want_to_move = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	position = position.snapped(Vector2.ONE*tile_size)
 	position += Vector2.ONE *tile_size/2
 
-func _unhandled_input(event):
-	if tween.is_active():
-		return
+func _process(delta):
+	if tween.is_active() == false and want_to_move == true:
+		want_to_move = false;
+		move(inputs[last_dir])
+	#print(get_position())
+	#print(int(get_position().x) % 100)
+	#print(int(get_position().y) % 100)
+	
+func _input(event):
 	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
-			move(inputs[dir])
-
+		if event.is_action_pressed(dir, true):
+			if last_dir != dir:
+				#somewhat concerned that the tween instructions here effect ALL tweens
+				print("change dir")
+				want_to_move = true
+			if tween.is_active() == false:
+				move(inputs[dir])
+			else: 
+			#check relative position of character in tile
+				var x_pos = int(get_position().x) % 100
+				var y_pos = int(get_position().y) % 100
+				#don't keep moving unless the character is on the outer bounds of the tile
+				if 75 < x_pos and x_pos < 25 and 75 < y_pos and y_pos < 25 :
+					want_to_move = true
+			last_dir = dir
 
 func move_tween(dir):
 	tween.interpolate_property(self, "position",
