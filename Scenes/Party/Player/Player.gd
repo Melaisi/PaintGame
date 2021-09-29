@@ -9,12 +9,14 @@ var inputs = {
 
 onready var ray = $RayCast2D 
 onready var tween = $Tween 
+onready var _transition_rect = $SceneTransitionCanvas/SceneTransition
 export var speed = 3.15
 var last_dir
 var want_to_move = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(_transition_rect)
 	randomize()
 	position = position.snapped(Vector2.ONE*tile_size)
 	position += Vector2.ONE *tile_size/2
@@ -68,4 +70,4 @@ func enemy_encounter():
 	print(chance)
 	if 0 <= chance and chance <= 15:
 		print("encounter")
-		get_tree().change_scene("res://Scenes/Encounter/Encounter.tscn")
+		_transition_rect.transition_to("res://Scenes/Encounter/Encounter.tscn")
