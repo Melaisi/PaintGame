@@ -15,6 +15,7 @@ var want_to_move = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	randomize()
 	position = position.snapped(Vector2.ONE*tile_size)
 	position += Vector2.ONE *tile_size/2
 
@@ -22,9 +23,6 @@ func _process(delta):
 	if tween.is_active() == false and want_to_move == true:
 		want_to_move = false;
 		move(inputs[last_dir])
-	#print(get_position())
-	#print(int(get_position().x) % 100)
-	#print(int(get_position().y) % 100)
 	
 func _input(event):
 	for dir in inputs.keys():
@@ -42,15 +40,8 @@ func _input(event):
 				if last_dir != dir:
 				#somewhat concerned that the tween instructions here effect ALL tweens
 					want_to_move = true
-			print(last_dir)
 			if dir != null:
 				last_dir = dir
-
-func move_tween(dir):
-	tween.interpolate_property(self, "position",
-		position, position + dir * tile_size,
-		1.0/speed, Tween.TRANS_QUAD)
-	tween.start()
 
 func move(dir):
 	if dir.x < 0 :
@@ -63,5 +54,18 @@ func move(dir):
 	if !ray.is_colliding():
 		#position += inputs[dir] * tile_size
 		move_tween(dir)
+		return enemy_encounter()
 
+func move_tween(dir):
+	tween.interpolate_property(self, "position",
+		position, position + dir * tile_size,
+		1.0/speed, Tween.TRANS_QUAD)
+	tween.start()
+	return "completed"
 	
+func enemy_encounter():
+	var chance = randi() % 101
+	print(chance)
+	if 0 <= chance and chance <= 15:
+		print("encounter")
+		get_tree().change_scene("res://Scenes/Encounter/Encounter.tscn")
