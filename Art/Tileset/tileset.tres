@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=42 format=2]
+[gd_resource type="TileSet" load_steps=48 format=2]
 
 [ext_resource path="res://Art/Temp/Tiles/rpgTile007.png" type="Texture" id=1]
 [ext_resource path="res://Art/Temp/Tiles/rpgTile008.png" type="Texture" id=2]
@@ -43,8 +43,26 @@
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 99.0856, 13.4375, 99.0856, 12.8588, 44.6875, 10.544, 7.07175, 40.6366, 7.07175, 96.7708, 0.127319, 100, 0.127319, 0.705994, 100, 0 )
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 100, 100, 0, 100, 0, 0, 100, 0 )
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 100, 0, 100, 13.4375, 0, 12.8588 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 10.544, 0, 9.38657, 100, 0, 100 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 84.618, 0, 100, 0, 100, 100, 84.0393, 100 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 11.7014, 0, 0.127319, 100, 0, 98.5069, 100, 84.0393, 98.507, 83.4606, 38.3218, 66.6782, 21.5394 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 7.65045, 0, 25.5903, 73.6227, 100, 86.9329, 100, 100, 0, 100, 0, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 85.7755, 100, 85.1967, 100, 100, 0, 100 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 1.2847, 84.0394, 75.9375, 70.1505, 86.9329, 0, 100, 0, 100, 100, 0, 99.0856 )
 
 [resource]
 0/name = "rpgTile000"
@@ -58,11 +76,11 @@ points = PoolVector2Array( 100, 100, 0, 100, 0, 0, 100, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 0/shape = SubResource( 2 )
-0/shape_one_way = false
+0/shape_one_way = true
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
+"one_way": true,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -78,9 +96,16 @@ points = PoolVector2Array( 100, 100, 0, 100, 0, 0, 100, 0 )
 1/navigation_offset = Vector2( 50, 50 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
+1/shape = SubResource( 3 )
+1/shape_one_way = true
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 1/z_index = 0
 2/name = "rpgTile002"
 2/texture = ExtResource( 5 )
@@ -92,9 +117,16 @@ points = PoolVector2Array( 100, 100, 0, 100, 0, 0, 100, 0 )
 2/navigation_offset = Vector2( 50, 50 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape_one_way = false
-2/shape_one_way_margin = 0.0
-2/shapes = [  ]
+2/shape = SubResource( 6 )
+2/shape_one_way = true
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 2/z_index = 0
 3/name = "rpgTile003"
 3/texture = ExtResource( 6 )
@@ -204,16 +236,9 @@ points = PoolVector2Array( 100, 100, 0, 100, 0, 0, 100, 0 )
 10/navigation_offset = Vector2( 50, 50 )
 10/shape_offset = Vector2( 0, 0 )
 10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-10/shape = SubResource( 1 )
 10/shape_one_way = false
-10/shape_one_way_margin = 1.0
-10/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+10/shape_one_way_margin = 0.0
+10/shapes = [  ]
 10/z_index = 0
 11/name = "rpgTile011"
 11/texture = ExtResource( 3 )
@@ -281,9 +306,16 @@ points = PoolVector2Array( 100, 100, 0, 100, 0, 0, 100, 0 )
 15/navigation_offset = Vector2( 50, 50 )
 15/shape_offset = Vector2( 0, 0 )
 15/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-15/shape_one_way = false
-15/shape_one_way_margin = 0.0
-15/shapes = [  ]
+15/shape = SubResource( 4 )
+15/shape_one_way = true
+15/shape_one_way_margin = 1.0
+15/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 15/z_index = 0
 16/name = "rpgTile016"
 16/texture = ExtResource( 16 )
@@ -309,9 +341,16 @@ points = PoolVector2Array( 100, 100, 0, 100, 0, 0, 100, 0 )
 17/navigation_offset = Vector2( 50, 50 )
 17/shape_offset = Vector2( 0, 0 )
 17/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-17/shape_one_way = false
-17/shape_one_way_margin = 0.0
-17/shapes = [  ]
+17/shape = SubResource( 5 )
+17/shape_one_way = true
+17/shape_one_way_margin = 1.0
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 17/z_index = 0
 18/name = "rpgTile018"
 18/texture = ExtResource( 19 )
@@ -491,9 +530,16 @@ points = PoolVector2Array( 100, 100, 0, 100, 0, 0, 100, 0 )
 30/navigation_offset = Vector2( 50, 50 )
 30/shape_offset = Vector2( 0, 0 )
 30/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-30/shape_one_way = false
-30/shape_one_way_margin = 0.0
-30/shapes = [  ]
+30/shape = SubResource( 7 )
+30/shape_one_way = true
+30/shape_one_way_margin = 1.0
+30/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 30/z_index = 0
 31/name = "rpgTile031"
 31/texture = ExtResource( 29 )
@@ -505,9 +551,16 @@ points = PoolVector2Array( 100, 100, 0, 100, 0, 0, 100, 0 )
 31/navigation_offset = Vector2( 50, 50 )
 31/shape_offset = Vector2( 0, 0 )
 31/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-31/shape_one_way = false
-31/shape_one_way_margin = 0.0
-31/shapes = [  ]
+31/shape = SubResource( 8 )
+31/shape_one_way = true
+31/shape_one_way_margin = 1.0
+31/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 31/z_index = 0
 32/name = "rpgTile032"
 32/texture = ExtResource( 26 )
@@ -519,9 +572,16 @@ points = PoolVector2Array( 100, 100, 0, 100, 0, 0, 100, 0 )
 32/navigation_offset = Vector2( 50, 50 )
 32/shape_offset = Vector2( 0, 0 )
 32/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-32/shape_one_way = false
-32/shape_one_way_margin = 0.0
-32/shapes = [  ]
+32/shape = SubResource( 9 )
+32/shape_one_way = true
+32/shape_one_way_margin = 1.0
+32/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": true,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
 32/z_index = 0
 33/name = "rpgTile033"
 33/texture = ExtResource( 28 )
