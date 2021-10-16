@@ -18,4 +18,6 @@ func _ready():
 
 func _on_NewGame_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		get_tree().change_scene("res://Scenes/Main/MainLevel.tscn")
+		#get_tree().change_scene("res://Scenes/Main/MainLevel.tscn")
+		# use the global transition instead 
+		get_node("/root/Global").setScene("res://Scenes/Main/MainLevel.tscn")
