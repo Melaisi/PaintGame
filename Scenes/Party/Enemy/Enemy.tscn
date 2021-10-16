@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Art/To be used/Characters/enemyPaper_04.png" type="Texture" id=1]
 [ext_resource path="res://Art/To be used/Characters/enemyPaper_01.png" type="Texture" id=2]
 [ext_resource path="res://Art/To be used/Characters/enemyPaper_03.png" type="Texture" id=3]
 [ext_resource path="res://Art/To be used/Characters/enemyPaper_02.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Party/Enemy/Enemy.gd" type="Script" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -16,12 +17,20 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 27, 46 )
 
-[node name="Enemy_NotHappy" type="Area2D"]
+[node name="Enemy" type="Area2D"]
+script = ExtResource( 5 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="notHappy" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 2
+frame = 1
+playing = true
+
+[node name="Happy" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
