@@ -10,9 +10,18 @@ extends Node
 var currentScene = null 
 
 
+############## ENEMY ##################
 # update enemy state from notHappy to happy 
-
-
+# TODO: should be a class 
+var enemy_state = "NOT_HAPPY" # initial enemy state 
+func update_enemy_state_to(state):
+	enemy_state = state 
+func set_enemy_not_happy():
+	update_enemy_state_to("NOT_HAPPY")
+func set_enemy_happy():
+	update_enemy_state_to("HAPPY")
+	
+##############################################
 
 func updateEnemyState():
 	pass 
