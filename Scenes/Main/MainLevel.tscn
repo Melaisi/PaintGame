@@ -25,6 +25,7 @@ position = Vector2( 180.653, 194.079 )
 follow_viewport_enable = true
 
 [node name="SceneTransition" parent="Player/SceneTransitionCanvas" instance=ExtResource( 4 )]
+visible = false
 anchor_left = 0.141
 anchor_top = 0.267
 anchor_right = 0.144
@@ -33,7 +34,6 @@ margin_left = -638.48
 margin_top = -356.56
 margin_right = 735.8
 margin_bottom = 358.28
-color = Color( 0.639216, 0.286275, 0.643137, 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0.444946, 0.667435 )
@@ -47,5 +47,4 @@ drag_margin_right = 1.0
 drag_margin_bottom = 1.0
 
 [node name="Enemy_NotHappy" parent="." instance=ExtResource( 3 )]
-visible = false
 position = Vector2( 854.218, 349.887 )
