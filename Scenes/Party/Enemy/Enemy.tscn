@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Art/To be used/Characters/enemyPaperHappy_01.png" type="Texture" id=1]
-[ext_resource path="res://Art/To be used/Characters/enemyPaperHappy_02.png" type="Texture" id=2]
-[ext_resource path="res://Art/To be used/Characters/enemyPaperHappy_03.png" type="Texture" id=3]
-[ext_resource path="res://Art/To be used/Characters/enemyPaperHappy_04.png" type="Texture" id=4]
+[ext_resource path="res://Art/To be used/Characters/enemyPaper_04.png" type="Texture" id=1]
+[ext_resource path="res://Art/To be used/Characters/enemyPaper_01.png" type="Texture" id=2]
+[ext_resource path="res://Art/To be used/Characters/enemyPaper_03.png" type="Texture" id=3]
+[ext_resource path="res://Art/To be used/Characters/enemyPaper_02.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Party/Enemy/Enemy.gd" type="Script" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
@@ -20,17 +20,19 @@ extents = Vector2( 27, 46 )
 [node name="Enemy" type="Area2D"]
 script = ExtResource( 5 )
 
-[node name="notHappy" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
-animation = "Idle"
-frame = 1
-playing = true
-
 [node name="Happy" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
+frame = 3
+playing = true
+
+[node name="notHappy" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -2, 4 )
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
