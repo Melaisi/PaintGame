@@ -7,13 +7,13 @@
 extends Node
 
 # Help keep track of current scene
-var currentScene = null 
+var currentScene  = null
 
 
 ############## ENEMY ##################
 # update enemy state from notHappy to happy 
 # TODO: should be a class 
-var enemy_state = "NOT_HAPPY" # initial enemy state 
+export var enemy_state : String = "NOT_HAPPY" # initial enemy state 
 func update_enemy_state_to(state):
 	enemy_state = state 
 func set_enemy_not_happy():
@@ -29,7 +29,6 @@ func updateEnemyState():
 
 func _ready():
 	currentScene = get_tree().get_root().get_child(get_tree().get_root().get_child_count()-1)
-	
 	
 
 #Transition to another scene 
