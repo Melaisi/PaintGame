@@ -8,7 +8,9 @@ extends Node
 
 # Help keep track of current scene
 var currentScene  = null
-
+# last player position when entering an encounter
+var playerX = 200 
+var playerY = 200
 
 ############## ENEMY ##################
 # update enemy state from notHappy to happy 

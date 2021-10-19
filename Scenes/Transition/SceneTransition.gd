@@ -12,6 +12,8 @@ func _ready() -> void:
 	pass
 
 func transition_to(_next_scene := next_scene_path) -> void:
+	print("next scene " + _next_scene)
+	print(next_scene_path)
 	_anim_player.play_backwards("Fade")
 	yield(_anim_player, "animation_finished")
 	# Plays the Fade animation and wait until it finishes
@@ -19,5 +21,5 @@ func transition_to(_next_scene := next_scene_path) -> void:
 	yield(_anim_player, "animation_finished")
 	# Changes the scene
 	#get_tree().change_scene(_next_scene)
-	# use the new global transition method 
+	# transitioning from Main to Encounter
 	get_node("/root/Global").setScene(_next_scene)

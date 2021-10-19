@@ -7,6 +7,7 @@ var inputs = {
 	"ui_up":Vector2.UP,
 	"ui_down":Vector2.DOWN}
 
+onready var Global = get_node("/root/Global")
 onready var ray = $RayCast2D 
 onready var tween = $Tween 
 onready var _transition_rect = $SceneTransitionCanvas/SceneTransition
@@ -14,12 +15,16 @@ export var speed = 3.15
 var last_dir
 var want_to_move = false
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(_transition_rect)
 	randomize()
+	position.x = Global.playerX
+	position.y = Global.playerY
 	position = position.snapped(Vector2.ONE*tile_size)
 	position += Vector2.ONE *tile_size/2
+	
 
 func _process(delta):
 	if tween.is_active() == false and want_to_move == true:
@@ -70,4 +75,6 @@ func enemy_encounter():
 	print(chance)
 	if 0 <= chance and chance <= 15:
 		print("encounter")
+		Global.playerX = position.x
+		Global.playerY = position.y
 		_transition_rect.transition_to("res://Scenes/Encounter/Encounter.tscn")

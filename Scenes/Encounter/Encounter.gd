@@ -8,6 +8,7 @@ func _ready():
 	#For testing only 
 	won()
 	#lost()
+	pass
 
 func won():
 	# Yay! change to enemy global variable to happy 
