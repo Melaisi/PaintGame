@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Party/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Encounter/Encounter.gd" type="Script" id=2]
 [ext_resource path="res://Art/Temp/battlebgrd.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Party/Enemy/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Art/To be used/UI/buttonPaintRed.png" type="Texture" id=5]
+[ext_resource path="res://Art/To be used/UI/buttonPaintBlue.png" type="Texture" id=6]
+[ext_resource path="res://Art/To be used/UI/buttonPaintYellow.png" type="Texture" id=7]
+[ext_resource path="res://Art/Temp/EnemyThoughts.png" type="Texture" id=8]
+[ext_resource path="res://Art/To be used/UI/playerStamina.png" type="Texture" id=9]
+[ext_resource path="res://Art/To be used/UI/playerCursor.png" type="Texture" id=10]
+[ext_resource path="res://Art/Temp/Numbers/02.png" type="Texture" id=11]
+[ext_resource path="res://Art/Temp/Numbers/03.png" type="Texture" id=12]
+[ext_resource path="res://Art/Temp/Numbers/01.png" type="Texture" id=13]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -11,7 +21,79 @@ script = ExtResource( 2 )
 texture = ExtResource( 3 )
 centered = false
 
-[node name="Player" parent="Background" instance=ExtResource( 1 )]
-position = Vector2( 194.171, 284.879 )
-scale = Vector2( 5, 5 )
+[node name="battle" type="Node2D" parent="Background"]
+
+[node name="Enemy" parent="Background/battle" instance=ExtResource( 4 )]
+position = Vector2( 1098.65, 403.137 )
+scale = Vector2( 4, 4 )
 script = null
+
+[node name="EnemyThoughts" type="Sprite" parent="Background/battle/Enemy"]
+position = Vector2( -80.0361, 43.4765 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[node name="Player" parent="Background/battle" instance=ExtResource( 1 )]
+position = Vector2( 251.035, 358.682 )
+scale = Vector2( 2, 2 )
+script = null
+
+[node name="Stamina" type="Sprite" parent="Background/battle/Player"]
+position = Vector2( 4.61118, -125.818 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="01" type="Sprite" parent="Background/battle/Player/Stamina"]
+visible = false
+position = Vector2( 142.287, -2.63495 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+
+[node name="02" type="Sprite" parent="Background/battle/Player/Stamina"]
+visible = false
+position = Vector2( 144.922, 1.31747 )
+texture = ExtResource( 11 )
+
+[node name="03" type="Sprite" parent="Background/battle/Player/Stamina"]
+position = Vector2( 144.922, 0 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 12 )
+
+[node name="PaintRed" type="Sprite" parent="Background/battle"]
+position = Vector2( 240.434, 592.364 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+
+[node name="PaintBlue" type="Sprite" parent="Background/battle"]
+position = Vector2( 137.984, 484.625 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="PaintYellow" type="Sprite" parent="Background/battle"]
+position = Vector2( 240.092, 662.215 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
+
+[node name="Cursors" type="Node2D" parent="Background/battle"]
+
+[node name="blue" type="Sprite" parent="Background/battle/Cursors"]
+position = Vector2( 85.6355, 548.068 )
+rotation = -1.48353
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="red" type="Sprite" parent="Background/battle/Cursors"]
+visible = false
+position = Vector2( 106.715, 590.227 )
+rotation = -1.5708
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="yellow" type="Sprite" parent="Background/battle/Cursors"]
+visible = false
+position = Vector2( 108.033, 661.37 )
+rotation = -1.65806
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
