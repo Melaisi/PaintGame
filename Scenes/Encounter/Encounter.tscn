@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Party/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Encounter/Encounter.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Art/Temp/Numbers/02.png" type="Texture" id=11]
 [ext_resource path="res://Art/Temp/Numbers/03.png" type="Texture" id=12]
 [ext_resource path="res://Art/Temp/Numbers/01.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/Encounter/Stamina.gd" type="Script" id=14]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -42,6 +43,7 @@ script = null
 position = Vector2( 4.61118, -125.818 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
+script = ExtResource( 14 )
 
 [node name="01" type="Sprite" parent="Background/battle/Player/Stamina"]
 visible = false
@@ -55,25 +57,10 @@ position = Vector2( 144.922, 1.31747 )
 texture = ExtResource( 11 )
 
 [node name="03" type="Sprite" parent="Background/battle/Player/Stamina"]
+visible = false
 position = Vector2( 144.922, 0 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 12 )
-
-[node name="PaintRed" type="Sprite" parent="Background/battle"]
-position = Vector2( 240.434, 592.364 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 5 )
-
-[node name="PaintBlue" type="Sprite" parent="Background/battle"]
-position = Vector2( 137.984, 484.625 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 6 )
-centered = false
-
-[node name="PaintYellow" type="Sprite" parent="Background/battle"]
-position = Vector2( 240.092, 662.215 )
-scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 7 )
 
 [node name="Cursors" type="Node2D" parent="Background/battle"]
 
@@ -97,3 +84,21 @@ position = Vector2( 108.033, 661.37 )
 rotation = -1.65806
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 10 )
+
+[node name="Paint" type="Node2D" parent="Background/battle"]
+
+[node name="PaintRed" type="Sprite" parent="Background/battle/Paint"]
+position = Vector2( 240.434, 592.364 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+
+[node name="PaintBlue" type="Sprite" parent="Background/battle/Paint"]
+position = Vector2( 137.984, 484.625 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="PaintYellow" type="Sprite" parent="Background/battle/Paint"]
+position = Vector2( 240.092, 662.215 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
